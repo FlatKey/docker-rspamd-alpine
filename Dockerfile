@@ -4,7 +4,7 @@ FROM alpine:edge
 RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories \
  && apk add --no-cache rspamd rspamd-controller rsyslog ca-certificates
 
-RUN groupadd -g 2000 rspamd && useradd --no-log-init -u 2000 -g rspamd rspamd
+RUN addgroup -g 2000 rspamd && adduser -u 2000 -G rspamd rspamd
 
 RUN mkdir /run/rspamd
 

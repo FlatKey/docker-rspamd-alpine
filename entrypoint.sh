@@ -1,4 +1,11 @@
 #!/bin/sh
+
+# set standard logging if no modification exists
+if [ ! -e /etc/rspamd/local.d/logging.inc ] && [ ! -e /etc/rspamd/override.d/logging.inc ];
+then
+    echo 'type = "console";' > /etc/rspamd/local.d/logging.inc
+fi
+
 rspamd -f -u rspamd -g rspamd &
 
 pids=`jobs -p`

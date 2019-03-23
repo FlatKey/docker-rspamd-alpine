@@ -9,6 +9,6 @@ RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/reposit
 RUN mkdir /run/rspamd
 
 COPY conf/ /etc/rspamd
-COPY start.sh /start.sh
+COPY entrypoint.sh /usr/bin/
 
-CMD ["/start.sh"]
+ENTRYPOINT [ "entrypoint.sh" ]

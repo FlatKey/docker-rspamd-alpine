@@ -1,7 +1,7 @@
 #!/bin/sh
 
 SECURE_IP=${SECURE_IP:-"127.0.0.1"}
-PASSWORD=${PASSWORD:-"mailu"}
+PASSWORD=${PASSWORD:-"changeme"}
 ENABLE_PASSWORD=${ENABLE_PASSWORD:-$PASSWORD}
 
 cat << EOF > /etc/rspamd/local.d/worker-controller.inc
